@@ -138,7 +138,7 @@ namespace YieldCurveGraph
         public void setIndex()
         {
             // データセット（CSV）の読み込み
-            string fileName = "I:\\HandMadePrograms\\YieldCurveGraph\\YieldCurveGraph\\YieldCurveGraph\\DataSet\\" + stind + "data.csv";
+            string fileName = "I:\\HandMadePrograms\\YieldCurveGraph\\YieldCurveGraph\\DataSet\\" + stind + "data.csv";
             StreamReader sr = new StreamReader(@fileName);
             int i = 0;
 
