@@ -18,7 +18,9 @@ namespace YieldCurveGraph
     public partial class Form1 : Form
     {   
         // Form1クラスで利用する変数の定義
+        // 金利と指数データを受け取るリストの定義
         List<string[]> lists = new List<string[]>();
+        // イールドカーブのX軸を表示するリスト
         string[] yieldX = { "3M", "6M", "1Y", "2Y", "3Y", "5Y", "7Y", "10Y", "20Y", "30Y" };
         // グラフの表示日数のカウント
         int count = 0;
@@ -64,7 +66,7 @@ namespace YieldCurveGraph
             series.MarkerBorderColor = Color.Black;              //マーカーの枠の色
             series.MarkerStyle = MarkerStyle.Square;
 
-            // 系列のポイント情報をセット、イールドカーブのデータは１０種（CSVファイルの２～１０列）
+            // 系列のポイント情報をセット、イールドカーブのデータは10種（CSVファイルの2～10列）
             for (int i = 0; i < 10; i++)
             {   
                 // Seriesにデータを追加
@@ -109,7 +111,7 @@ namespace YieldCurveGraph
             series1.Color = ColorTranslator.FromHtml("#dc143c");  //グラフ色の設定
             series1.BorderWidth = 3;                              //ボーダーの幅            
 
-            // 系列のポイント情報をセット、イールドカーブのデータは１０種（CSVファイルの１１列）
+            // 系列のポイント情報をセット、イールドカーブのデータは10種（CSVファイルの11列）
             for (int j = 1; j < count; j++)
             {   
                 // シリーズに終値データを追加
@@ -133,6 +135,15 @@ namespace YieldCurveGraph
             }
             // 生成・設定した系列をChartコントロールに追加
             StockInd.Series.Add(series1);
+        }
+
+        // 史上最高値、最高値後の安値、下落率の値をリセットするメソッド
+        public void resetMaxmin()
+        {
+            for(int i=0; i < maxmin.Length; i++)
+                {
+                maxmin[i] = 1.0;
+                }
         }
 
         public void setIndex()
@@ -228,7 +239,7 @@ namespace YieldCurveGraph
             // 再生の一時停止判定
             playjudge = false;
             // 表示期間指定を指定した時の処理
-            if(startday.Text == "0" || startday.Text =="yyyy/mm/dd" || startday.Text == "")
+            if(startday.Text == "0" || startday.Text =="yyyy-mm-dd" || startday.Text == "")
             {
                 count = 0;
             }
@@ -243,7 +254,7 @@ namespace YieldCurveGraph
                         dateerror.Text = "";    // 日付エラーテキストの非表示
                         count = i;              // countへ代入
                         test = false;           // エラー出力の可否をfalseに
-                        maxmin[0] = 1.0;
+                        resetMaxmin();
                         break;
                     }
 
@@ -264,8 +275,7 @@ namespace YieldCurveGraph
             stind = "DJI";
             // データを格納していたリストと、史上最高値、最高値後の最安値の値をリセット
             lists.Clear();
-            maxmin[0] = 1.0;
-            maxmin[1] = 1.0;
+            resetMaxmin();
             // 対応する株価指数のデータを再度CSVから読み込み
             setIndex();
         }
@@ -275,8 +285,7 @@ namespace YieldCurveGraph
             stind = "SP500";
             // データを格納していたリストと、史上最高値、最高値後の最安値の値をリセット
             lists.Clear();
-            maxmin[0] = 1.0;
-            maxmin[1] = 1.0;
+            resetMaxmin();
             // 対応する株価指数のデータを再度CSVから読み込み
             setIndex();
         }
@@ -286,8 +295,7 @@ namespace YieldCurveGraph
             stind = "NDX100";
             // データを格納していたリストと、史上最高値、最高値後の最安値の値をリセット
             lists.Clear();
-            maxmin[0] = 1.0;
-            maxmin[1] = 1.0;
+            resetMaxmin();
             // 対応する株価指数のデータを再度CSVから読み込み
             setIndex();
         }

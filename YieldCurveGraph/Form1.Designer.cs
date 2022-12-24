@@ -209,7 +209,7 @@
             this.startday.Name = "startday";
             this.startday.Size = new System.Drawing.Size(100, 19);
             this.startday.TabIndex = 13;
-            this.startday.Text = "yyyy/mm/dd";
+            this.startday.Text = "yyyy-mm-dd";
             // 
             // label4
             // 
