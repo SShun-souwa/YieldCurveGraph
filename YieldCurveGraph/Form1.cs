@@ -181,11 +181,11 @@ namespace YieldCurveGraph
             }
         }
         // 入力された日付を正規表現(Regexクラス)を用いて同一の形式に整形するメソッド
-        // 例　2000/01/01 →　2000-1-1
+        // 例　2000/1/1 →　2000-01-01
         public String daySet(String days)
         {   // デフォルトの日付および日付を構成する年、月、日パーツを格納する配列の定義
-            String[] dayParts = { "2000", "1", "1" };   
-            String day = "2000-1-1";
+            String[] dayParts = { "2000", "01", "01" };   
+            String day = "2000-01-01";
             int i = 0;
             // 正規表現で4桁数字+区切り文字+1~2桁数字+区切り文字+1~2桁数字に合致するか判定
             if (Regex.IsMatch(days, @"\d{4}.\d{1,2}.\d{1,2}"))
@@ -196,12 +196,12 @@ namespace YieldCurveGraph
                     dayParts[i] = match.Value;
                     i++;
                 }
-                // 月と日のパーツが01などの0から始まる場合、0を省略して再格納
-                for(int j=1; j <= 2; j++)
+                // 月と日のパーツが一桁で、0が落ちている場合、0を追加して再格納
+                for(int j=1; j < 3; j++)
                 {
-                    if (dayParts[j][0] == 0)
+                    if (dayParts[j].Length == 1)
                     {
-                        dayParts[j] = dayParts[j][1].ToString();
+                        dayParts[j] = "0" + dayParts[j].ToString();
                     }
                     
                 }
@@ -228,6 +228,7 @@ namespace YieldCurveGraph
         // 再生ボタンを押下した時の処理（非同期宣言）
         private async void play_Click(object sender, EventArgs e)
         {
+            play.Enabled = false;
             // WriteLog("play");
             // 現在表示している株価指数名の表示
             IndName.Text = stind;
@@ -257,6 +258,10 @@ namespace YieldCurveGraph
                     count += 1;
 
                     // 次のグラフの表示までのウェイト処理
+                    if(speed >= 10000) 
+                    {
+                        speed = 1000;
+                    }
                     await Task.Delay(10000/speed);
                 }
                 else
@@ -268,13 +273,15 @@ namespace YieldCurveGraph
 
         // 再生ストップボタンを押下した時の処理
         private void stop_Click(object sender, EventArgs e)
-        {   
+        {
+            play.Enabled = true;
             // 再生の一時停止判定
             playjudge = false;
         }
 
         private void reset_Click(object sender, EventArgs e)
-        {   
+        {
+            play.Enabled = true;
             // 最高値と下落率の表示のリセット
             highest.Text = "";
             fall.Text = "";
@@ -289,10 +296,11 @@ namespace YieldCurveGraph
             }
             else{
                 int i = 0;
+                String day = daySet(startday.Text);
                 // CSVデータの日付カラムから入力された日付と同日のインデックス番号を検索し、countに代入する処理
                 while (i < lists.Count) 
-                {
-                    if(daySet(startday.Text) == lists[i][0]) 
+                { 
+                    if (day == lists[i][0]) 
                     {
                         dateerror.Text = "";    // 日付エラーテキストの非表示
                         count = i;              // countへ代入
@@ -303,7 +311,7 @@ namespace YieldCurveGraph
                     i++;
                 }
                 // 指定された日付がデータに存在しない場合にエラーの表示
-                if (daySet(startday.Text)　== "none"　|| test)
+                if (day　== "none"　|| test)
                 {
                     count = 0;
                     dateerror.Text = "指定された日付のデータはありません。日時をずらしてください。";
