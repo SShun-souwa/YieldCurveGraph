@@ -228,7 +228,7 @@ namespace YieldCurveGraph
         // 再生ボタンを押下した時の処理（非同期宣言）
         private async void play_Click(object sender, EventArgs e)
         {
-            WriteLog("play");
+            // WriteLog("play");
             // 現在表示している株価指数名の表示
             IndName.Text = stind;
             // 日付のエラー文の初期化
