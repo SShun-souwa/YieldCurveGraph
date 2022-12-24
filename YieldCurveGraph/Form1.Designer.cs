@@ -55,6 +55,7 @@
             this.NDX100button = new System.Windows.Forms.Button();
             this.IndName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.testlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.YieldCurve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockInd)).BeginInit();
             this.SuspendLayout();
@@ -281,11 +282,22 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "現在表示中の株価指数";
             // 
+            // testlabel
+            // 
+            this.testlabel.AutoSize = true;
+            this.testlabel.Font = new System.Drawing.Font("MS UI Gothic", 30F);
+            this.testlabel.Location = new System.Drawing.Point(124, 29);
+            this.testlabel.Name = "testlabel";
+            this.testlabel.Size = new System.Drawing.Size(112, 40);
+            this.testlabel.TabIndex = 21;
+            this.testlabel.Text = "label6";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.testlabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.IndName);
             this.Controls.Add(this.NDX100button);
@@ -340,6 +352,7 @@
         private System.Windows.Forms.Button NDX100button;
         private System.Windows.Forms.Label IndName;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label testlabel;
     }
 }
 

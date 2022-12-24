@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Net.Mime.MediaTypeNames;
-
+using System.Text.RegularExpressions;
 
 namespace YieldCurveGraph
 {
@@ -146,6 +146,7 @@ namespace YieldCurveGraph
                 }
         }
 
+        // イールドカーブと株価指数のデータを作業用リストにセットするメソッド
         public void setIndex()
         {
             // データセット（CSV）の読み込み
@@ -171,6 +172,38 @@ namespace YieldCurveGraph
                 // 配列からリストに格納
                 lists.Add(values);
             }
+        }
+        // 入力された日付を正規表現(Regexクラス)を用いて同一の形式に整形するメソッド
+        // 例　2000/01/01 →　2000-1-1
+        public String daySet(String days)
+        {
+            String[] dayParts = { "2000", "1", "1" };   
+            String day = "2000-1-1";
+            int i = 0;
+            if (Regex.IsMatch(days, @"\d{4}.\d{1,2}.\d{1,2}"))
+            {
+                MatchCollection matches = Regex.Matches(days, @"\d+");
+                foreach(Match match in matches) 
+                {
+                    dayParts[i] = match.Value;
+                    i++;
+                }
+
+                for(int j=1; j <= 2; j++)
+                {
+                    if (dayParts[j][0] == 0)
+                    {
+                        dayParts[j] = dayParts[j][1].ToString();
+                    }
+                    
+                }
+                day = dayParts[0] + "-" + dayParts[1]+ "-" + dayParts[2];
+                return day;
+            }else
+            {
+                return "none";
+            }
+
         }
 
         public Form1()
@@ -238,22 +271,23 @@ namespace YieldCurveGraph
             fall.Text = "";
             // 再生の一時停止判定
             playjudge = false;
+            // データリスト内に入力された日付が存在しないかどうかの判定
+            bool test = true;
             // 表示期間指定を指定した時の処理
-            if(startday.Text == "0" || startday.Text =="yyyy-mm-dd" || startday.Text == "")
+            if (startday.Text == "0" || startday.Text =="yyyy-mm-dd" || startday.Text == "")
             {
                 count = 0;
             }
             else{
                 int i = 0;
-                bool test = true;
                 // CSVデータの日付カラムから入力された日付と同日のインデックス番号を検索し、countに代入する処理
-                while(i < lists.Count) 
+                while (i < lists.Count) 
                 {
-                    if(startday.Text == lists[i][0]) 
+                    if(daySet(startday.Text) == lists[i][0]) 
                     {
                         dateerror.Text = "";    // 日付エラーテキストの非表示
                         count = i;              // countへ代入
-                        test = false;           // エラー出力の可否をfalseに
+                        test = false;
                         resetMaxmin();
                         break;
                     }
@@ -261,7 +295,7 @@ namespace YieldCurveGraph
                     i++;
                 }
                 // 指定された日付がデータに存在しない場合にエラーの表示
-                if (test)
+                if (daySet(startday.Text)　== "none"　|| test)
                 {
                     dateerror.Text = "指定された日付のデータはありません。日時をずらしてください。";
                 }
