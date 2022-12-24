@@ -35,6 +35,13 @@ namespace YieldCurveGraph
         // 表示する株価指数
         string stind = "DJI";
 
+        // ログファイルにログを入力するメソッド
+        // ソリューションを保存したディレクトリ\\bin\\Debug\\log.text
+        private void WriteLog(String text)
+        {
+            File.AppendAllText("log.txt", text + Environment.NewLine);
+        } 
+       
         // イールドカーブのグラフエリアをセットするメソッド
         public void YieldcurveChart()
         {
@@ -150,7 +157,7 @@ namespace YieldCurveGraph
         public void setIndex()
         {
             // データセット（CSV）の読み込み
-            string fileName = "I:\\HandMadePrograms\\YieldCurveGraph\\YieldCurveGraph\\DataSet\\" + stind + "data.csv";
+            string fileName = "DataSet\\" + stind + "data.csv";
             StreamReader sr = new StreamReader(@fileName);
             int i = 0;
 
@@ -176,19 +183,20 @@ namespace YieldCurveGraph
         // 入力された日付を正規表現(Regexクラス)を用いて同一の形式に整形するメソッド
         // 例　2000/01/01 →　2000-1-1
         public String daySet(String days)
-        {
+        {   // デフォルトの日付および日付を構成する年、月、日パーツを格納する配列の定義
             String[] dayParts = { "2000", "1", "1" };   
             String day = "2000-1-1";
             int i = 0;
+            // 正規表現で4桁数字+区切り文字+1~2桁数字+区切り文字+1~2桁数字に合致するか判定
             if (Regex.IsMatch(days, @"\d{4}.\d{1,2}.\d{1,2}"))
-            {
+            {   // 合致する場合、数字の部分を抜き出して、日付のパーツ用配列に格納
                 MatchCollection matches = Regex.Matches(days, @"\d+");
                 foreach(Match match in matches) 
                 {
                     dayParts[i] = match.Value;
                     i++;
                 }
-
+                // 月と日のパーツが01などの0から始まる場合、0を省略して再格納
                 for(int j=1; j <= 2; j++)
                 {
                     if (dayParts[j][0] == 0)
@@ -197,15 +205,15 @@ namespace YieldCurveGraph
                     }
                     
                 }
+                // 日付のパーツを-で連結しyyyy-dd-mmの日付表記に変更し、戻り値として返す
                 day = dayParts[0] + "-" + dayParts[1]+ "-" + dayParts[2];
                 return day;
             }else
-            {
+            {　 // 入力された日付の形式が判別できない場合、文字列noneを返す
                 return "none";
             }
 
         }
-
         public Form1()
         {
             InitializeComponent();
@@ -220,6 +228,7 @@ namespace YieldCurveGraph
         // 再生ボタンを押下した時の処理（非同期宣言）
         private async void play_Click(object sender, EventArgs e)
         {
+            WriteLog("play");
             // 現在表示している株価指数名の表示
             IndName.Text = stind;
             // 日付のエラー文の初期化
@@ -291,12 +300,12 @@ namespace YieldCurveGraph
                         resetMaxmin();
                         break;
                     }
-
                     i++;
                 }
                 // 指定された日付がデータに存在しない場合にエラーの表示
                 if (daySet(startday.Text)　== "none"　|| test)
                 {
+                    count = 0;
                     dateerror.Text = "指定された日付のデータはありません。日時をずらしてください。";
                 }
             }

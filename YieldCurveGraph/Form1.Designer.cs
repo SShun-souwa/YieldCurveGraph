@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.YieldCurve = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.StockInd = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.play = new System.Windows.Forms.Button();
@@ -55,39 +55,38 @@
             this.NDX100button = new System.Windows.Forms.Button();
             this.IndName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.testlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.YieldCurve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockInd)).BeginInit();
             this.SuspendLayout();
             // 
             // YieldCurve
             // 
-            chartArea1.Name = "ChartArea1";
-            this.YieldCurve.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.YieldCurve.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.YieldCurve.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.YieldCurve.Legends.Add(legend3);
             this.YieldCurve.Location = new System.Drawing.Point(25, 100);
             this.YieldCurve.Name = "YieldCurve";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.YieldCurve.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.YieldCurve.Series.Add(series3);
             this.YieldCurve.Size = new System.Drawing.Size(750, 500);
             this.YieldCurve.TabIndex = 0;
             this.YieldCurve.Text = "chart1";
             // 
             // StockInd
             // 
-            chartArea2.Name = "ChartArea1";
-            this.StockInd.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.StockInd.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.StockInd.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.StockInd.Legends.Add(legend4);
             this.StockInd.Location = new System.Drawing.Point(800, 100);
             this.StockInd.Name = "StockInd";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.StockInd.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.StockInd.Series.Add(series4);
             this.StockInd.Size = new System.Drawing.Size(750, 500);
             this.StockInd.TabIndex = 1;
             this.StockInd.Text = "chart2";
@@ -282,22 +281,11 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "現在表示中の株価指数";
             // 
-            // testlabel
-            // 
-            this.testlabel.AutoSize = true;
-            this.testlabel.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.testlabel.Location = new System.Drawing.Point(124, 29);
-            this.testlabel.Name = "testlabel";
-            this.testlabel.Size = new System.Drawing.Size(112, 40);
-            this.testlabel.TabIndex = 21;
-            this.testlabel.Text = "label6";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
-            this.Controls.Add(this.testlabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.IndName);
             this.Controls.Add(this.NDX100button);
@@ -352,7 +340,6 @@
         private System.Windows.Forms.Button NDX100button;
         private System.Windows.Forms.Label IndName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label testlabel;
     }
 }
 
