@@ -1,4 +1,6 @@
-﻿namespace YieldCurveGraph
+﻿using System.Windows.Forms;
+
+namespace YieldCurveGraph
 {
     partial class Form1
     {
@@ -28,12 +30,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.YieldCurve = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.StockInd = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.play = new System.Windows.Forms.Button();
@@ -55,38 +57,42 @@
             this.NDX100button = new System.Windows.Forms.Button();
             this.IndName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.changeYield = new System.Windows.Forms.Button();
+            this.changeVi = new System.Windows.Forms.Button();
+            this.EXIT = new System.Windows.Forms.Button();
+            this.StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.YieldCurve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockInd)).BeginInit();
             this.SuspendLayout();
             // 
             // YieldCurve
             // 
-            chartArea3.Name = "ChartArea1";
-            this.YieldCurve.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.YieldCurve.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.YieldCurve.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.YieldCurve.Legends.Add(legend1);
             this.YieldCurve.Location = new System.Drawing.Point(25, 100);
             this.YieldCurve.Name = "YieldCurve";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.YieldCurve.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.YieldCurve.Series.Add(series1);
             this.YieldCurve.Size = new System.Drawing.Size(750, 500);
             this.YieldCurve.TabIndex = 0;
             this.YieldCurve.Text = "chart1";
             // 
             // StockInd
             // 
-            chartArea4.Name = "ChartArea1";
-            this.StockInd.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.StockInd.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.StockInd.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.StockInd.Legends.Add(legend2);
             this.StockInd.Location = new System.Drawing.Point(800, 100);
             this.StockInd.Name = "StockInd";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.StockInd.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.StockInd.Series.Add(series2);
             this.StockInd.Size = new System.Drawing.Size(750, 500);
             this.StockInd.TabIndex = 1;
             this.StockInd.Text = "chart2";
@@ -281,11 +287,48 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "現在表示中の株価指数";
             // 
+            // changeYield
+            // 
+            this.changeYield.Font = new System.Drawing.Font("MS UI Gothic", 25F);
+            this.changeYield.Location = new System.Drawing.Point(75, 10);
+            this.changeYield.Name = "changeYield";
+            this.changeYield.Size = new System.Drawing.Size(200, 75);
+            this.changeYield.TabIndex = 21;
+            this.changeYield.Text = "changeYield";
+            this.changeYield.UseVisualStyleBackColor = true;
+            // 
+            // changeVi
+            // 
+            this.changeVi.Font = new System.Drawing.Font("MS UI Gothic", 25F);
+            this.changeVi.Location = new System.Drawing.Point(305, 10);
+            this.changeVi.Name = "changeVi";
+            this.changeVi.Size = new System.Drawing.Size(200, 75);
+            this.changeVi.TabIndex = 22;
+            this.changeVi.Text = "changeVi";
+            this.changeVi.UseVisualStyleBackColor = true;
+            this.changeVi.Click += new System.EventHandler(this.changeVi_Click);
+            // 
+            // EXIT
+            // 
+            this.EXIT.Font = new System.Drawing.Font("MS UI Gothic", 50F);
+            this.EXIT.ForeColor = System.Drawing.Color.OrangeRed;
+            this.EXIT.Location = new System.Drawing.Point(535, 10);
+            this.EXIT.Name = "EXIT";
+            this.EXIT.Size = new System.Drawing.Size(200, 75);
+            this.EXIT.TabIndex = 23;
+            this.EXIT.Text = "EXIT";
+            this.EXIT.UseVisualStyleBackColor = true;
+            this.EXIT.Click += new System.EventHandler(this.EXIT_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ControlBox = false;
+            this.Controls.Add(this.EXIT);
+            this.Controls.Add(this.changeVi);
+            this.Controls.Add(this.changeYield);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.IndName);
             this.Controls.Add(this.NDX100button);
@@ -340,6 +383,9 @@
         private System.Windows.Forms.Button NDX100button;
         private System.Windows.Forms.Label IndName;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button changeYield;
+        private System.Windows.Forms.Button changeVi;
+        private System.Windows.Forms.Button EXIT;
     }
 }
 

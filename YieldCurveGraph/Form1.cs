@@ -16,7 +16,8 @@ using System.Text.RegularExpressions;
 namespace YieldCurveGraph
 {
     public partial class Form1 : Form
-    {   
+    {
+        string appPath = System.Windows.Forms.Application.StartupPath;
         // Form1クラスで利用する変数の定義
         // 金利と指数データを受け取るリストの定義
         List<string[]> lists = new List<string[]>();
@@ -157,7 +158,7 @@ namespace YieldCurveGraph
         public void setIndex()
         {
             // データセット（CSV）の読み込み
-            string fileName = "DataSet\\" + stind + "data.csv";
+            string fileName = appPath + "\\DataSet\\" + stind + "data.csv";
             StreamReader sr = new StreamReader(@fileName);
             int i = 0;
 
@@ -172,10 +173,8 @@ namespace YieldCurveGraph
                     i += 1;
                     continue;
                 }
-
                 //カンマで配列の要素に分割
                 string[] values = line.Split(',');
-
                 // 配列からリストに格納
                 lists.Add(values);
             }
@@ -203,7 +202,6 @@ namespace YieldCurveGraph
                     {
                         dayParts[j] = "0" + dayParts[j].ToString();
                     }
-                    
                 }
                 // 日付のパーツを-で連結しyyyy-dd-mmの日付表記に変更し、戻り値として返す
                 day = dayParts[0] + "-" + dayParts[1]+ "-" + dayParts[2];
@@ -215,14 +213,21 @@ namespace YieldCurveGraph
 
         }
         public Form1()
-        {
+        {   
+            // logに実行ファイルのディレクトリパスを記入
+            WriteLog(appPath);
             InitializeComponent();
             setIndex();
+            changeYield.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            // アプリ起動時にlogの初期化
+            Encoding Enc = Encoding.GetEncoding("utf-8");
+            StreamWriter writer = new StreamWriter(appPath + "\\log.txt", false, Enc);
+            writer.WriteLine("create log");
+            writer.Close();
         }
 
         // 再生ボタンを押下した時の処理（非同期宣言）
@@ -324,6 +329,7 @@ namespace YieldCurveGraph
         private void button1_Click(object sender, EventArgs e)
         {
             stind = "DJI";
+            IndName.Text = stind;
             // データを格納していたリストと、史上最高値、最高値後の最安値の値をリセット
             lists.Clear();
             resetMaxmin();
@@ -334,6 +340,7 @@ namespace YieldCurveGraph
         private void button2_Click(object sender, EventArgs e)
         {
             stind = "SP500";
+            IndName.Text = stind;
             // データを格納していたリストと、史上最高値、最高値後の最安値の値をリセット
             lists.Clear();
             resetMaxmin();
@@ -344,11 +351,24 @@ namespace YieldCurveGraph
         private void button3_Click(object sender, EventArgs e)
         {
             stind = "NDX100";
+            IndName.Text = stind;
             // データを格納していたリストと、史上最高値、最高値後の最安値の値をリセット
             lists.Clear();
             resetMaxmin();
             // 対応する株価指数のデータを再度CSVから読み込み
             setIndex();
+        }
+
+        private void changeVi_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            this.Hide();
+        }
+
+        private void EXIT_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
