@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace YieldCurveGraph
 {
     public partial class Form2 : Form
@@ -54,9 +55,10 @@ namespace YieldCurveGraph
 
         private void DataSet_Click(object sender, EventArgs e)
         {
-            Dim p As System.Diagnostics.Process =
-            System.Diagnostics.Process.Start()
-                                         
+            System.Diagnostics.Process p = System.Diagnostics.Process.Start("notepad.exe");
+
+
+
         }
     }
 }
