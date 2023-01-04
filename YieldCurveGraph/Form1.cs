@@ -120,7 +120,7 @@ namespace YieldCurveGraph
             series1.BorderWidth = 3;                              //ボーダーの幅            
 
             // 系列のポイント情報をセット、イールドカーブのデータは10種（CSVファイルの11列）
-            for (int j = 1; j < count; j++)
+            for (int j = 1; j <= count; j++)
             {   
                 // シリーズに終値データを追加
                 series1.Points.AddXY(lists[j][0], lists[j][11]);
