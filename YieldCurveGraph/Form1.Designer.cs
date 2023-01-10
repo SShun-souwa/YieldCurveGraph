@@ -60,7 +60,6 @@ namespace YieldCurveGraph
             this.changeYield = new System.Windows.Forms.Button();
             this.changeVi = new System.Windows.Forms.Button();
             this.EXIT = new System.Windows.Forms.Button();
-            this.StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.YieldCurve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockInd)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +70,7 @@ namespace YieldCurveGraph
             this.YieldCurve.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.YieldCurve.Legends.Add(legend1);
-            this.YieldCurve.Location = new System.Drawing.Point(25, 100);
+            this.YieldCurve.Location = new System.Drawing.Point(25, 350);
             this.YieldCurve.Name = "YieldCurve";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -87,7 +86,7 @@ namespace YieldCurveGraph
             this.StockInd.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.StockInd.Legends.Add(legend2);
-            this.StockInd.Location = new System.Drawing.Point(800, 100);
+            this.StockInd.Location = new System.Drawing.Point(800, 350);
             this.StockInd.Name = "StockInd";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -101,7 +100,7 @@ namespace YieldCurveGraph
             // 
             this.play.Font = new System.Drawing.Font("MS UI Gothic", 30F);
             this.play.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.play.Location = new System.Drawing.Point(850, 630);
+            this.play.Location = new System.Drawing.Point(835, 90);
             this.play.Name = "play";
             this.play.Size = new System.Drawing.Size(200, 100);
             this.play.TabIndex = 2;
@@ -112,7 +111,7 @@ namespace YieldCurveGraph
             // stop
             // 
             this.stop.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.stop.Location = new System.Drawing.Point(1075, 630);
+            this.stop.Location = new System.Drawing.Point(1075, 90);
             this.stop.Name = "stop";
             this.stop.Size = new System.Drawing.Size(200, 100);
             this.stop.TabIndex = 3;
@@ -123,7 +122,7 @@ namespace YieldCurveGraph
             // reset
             // 
             this.reset.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.reset.Location = new System.Drawing.Point(1300, 630);
+            this.reset.Location = new System.Drawing.Point(1325, 90);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(200, 100);
             this.reset.TabIndex = 4;
@@ -133,7 +132,7 @@ namespace YieldCurveGraph
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(950, 751);
+            this.textBox1.Location = new System.Drawing.Point(930, 50);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(35, 19);
             this.textBox1.TabIndex = 5;
@@ -143,7 +142,7 @@ namespace YieldCurveGraph
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.label1.Location = new System.Drawing.Point(867, 753);
+            this.label1.Location = new System.Drawing.Point(830, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 14);
             this.label1.TabIndex = 6;
@@ -153,7 +152,7 @@ namespace YieldCurveGraph
             // 
             this.labeldate.AutoSize = true;
             this.labeldate.Font = new System.Drawing.Font("MS UI Gothic", 100F);
-            this.labeldate.Location = new System.Drawing.Point(25, 685);
+            this.labeldate.Location = new System.Drawing.Point(25, 185);
             this.labeldate.Name = "labeldate";
             this.labeldate.Size = new System.Drawing.Size(775, 134);
             this.labeldate.TabIndex = 7;
@@ -163,7 +162,7 @@ namespace YieldCurveGraph
             // 
             this.DateTime.AutoSize = true;
             this.DateTime.Font = new System.Drawing.Font("MS UI Gothic", 40F);
-            this.DateTime.Location = new System.Drawing.Point(25, 630);
+            this.DateTime.Location = new System.Drawing.Point(25, 150);
             this.DateTime.Name = "DateTime";
             this.DateTime.Size = new System.Drawing.Size(240, 54);
             this.DateTime.TabIndex = 8;
@@ -173,7 +172,7 @@ namespace YieldCurveGraph
             // 
             this.highest.AutoSize = true;
             this.highest.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.highest.Location = new System.Drawing.Point(1125, 50);
+            this.highest.Location = new System.Drawing.Point(1125, 275);
             this.highest.Name = "highest";
             this.highest.Size = new System.Drawing.Size(104, 40);
             this.highest.TabIndex = 9;
@@ -183,7 +182,7 @@ namespace YieldCurveGraph
             // 
             this.fall.AutoSize = true;
             this.fall.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.fall.Location = new System.Drawing.Point(1375, 50);
+            this.fall.Location = new System.Drawing.Point(1375, 275);
             this.fall.Name = "fall";
             this.fall.Size = new System.Drawing.Size(150, 40);
             this.fall.TabIndex = 10;
@@ -193,7 +192,7 @@ namespace YieldCurveGraph
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 15F);
-            this.label2.Location = new System.Drawing.Point(1100, 20);
+            this.label2.Location = new System.Drawing.Point(1100, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 20);
             this.label2.TabIndex = 11;
@@ -203,7 +202,7 @@ namespace YieldCurveGraph
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 15F);
-            this.label3.Location = new System.Drawing.Point(1300, 20);
+            this.label3.Location = new System.Drawing.Point(1300, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(245, 20);
             this.label3.TabIndex = 12;
@@ -211,7 +210,7 @@ namespace YieldCurveGraph
             // 
             // startday
             // 
-            this.startday.Location = new System.Drawing.Point(904, 814);
+            this.startday.Location = new System.Drawing.Point(930, 20);
             this.startday.Name = "startday";
             this.startday.Size = new System.Drawing.Size(100, 19);
             this.startday.TabIndex = 13;
@@ -221,7 +220,7 @@ namespace YieldCurveGraph
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.label4.Location = new System.Drawing.Point(867, 788);
+            this.label4.Location = new System.Drawing.Point(800, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 14);
             this.label4.TabIndex = 14;
@@ -239,7 +238,7 @@ namespace YieldCurveGraph
             // 
             // DJIbutton
             // 
-            this.DJIbutton.Location = new System.Drawing.Point(1100, 750);
+            this.DJIbutton.Location = new System.Drawing.Point(1080, 10);
             this.DJIbutton.Name = "DJIbutton";
             this.DJIbutton.Size = new System.Drawing.Size(113, 56);
             this.DJIbutton.TabIndex = 16;
@@ -249,7 +248,7 @@ namespace YieldCurveGraph
             // 
             // SP500button
             // 
-            this.SP500button.Location = new System.Drawing.Point(1225, 750);
+            this.SP500button.Location = new System.Drawing.Point(1230, 10);
             this.SP500button.Name = "SP500button";
             this.SP500button.Size = new System.Drawing.Size(113, 56);
             this.SP500button.TabIndex = 17;
@@ -259,7 +258,7 @@ namespace YieldCurveGraph
             // 
             // NDX100button
             // 
-            this.NDX100button.Location = new System.Drawing.Point(1350, 750);
+            this.NDX100button.Location = new System.Drawing.Point(1380, 10);
             this.NDX100button.Name = "NDX100button";
             this.NDX100button.Size = new System.Drawing.Size(113, 56);
             this.NDX100button.TabIndex = 18;
@@ -271,7 +270,7 @@ namespace YieldCurveGraph
             // 
             this.IndName.AutoSize = true;
             this.IndName.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.IndName.Location = new System.Drawing.Point(900, 50);
+            this.IndName.Location = new System.Drawing.Point(900, 275);
             this.IndName.Name = "IndName";
             this.IndName.Size = new System.Drawing.Size(75, 40);
             this.IndName.TabIndex = 19;
@@ -281,7 +280,7 @@ namespace YieldCurveGraph
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 15F);
-            this.label5.Location = new System.Drawing.Point(845, 20);
+            this.label5.Location = new System.Drawing.Point(845, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(205, 20);
             this.label5.TabIndex = 20;
@@ -351,6 +350,7 @@ namespace YieldCurveGraph
             this.Controls.Add(this.StockInd);
             this.Controls.Add(this.YieldCurve);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.YieldCurve)).EndInit();
