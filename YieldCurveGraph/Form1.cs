@@ -78,7 +78,7 @@ namespace YieldCurveGraph
             for (int i = 0; i < 10; i++)
             {   
                 // Seriesにデータを追加
-                series.Points.AddXY(yieldX[i], lists[count][i + 1]);
+                series.Points.AddXY(yieldX[i], double.Parse(lists[count][i + 1]));
                 // y軸設定用のリストにもデータを追加
                 yieldY.Add(double.Parse(lists[count][i + 1])); ;
             }
@@ -256,6 +256,7 @@ namespace YieldCurveGraph
                 {
                     // グラフの表示
                     YieldcurveChart();
+                    await Task.Delay(1);
                     StockIndChart();
 
                     // 表示しているデータの日付の表示を更新
