@@ -215,7 +215,6 @@ namespace YieldCurveGraph
         public Form1()
         {   
             // logに実行ファイルのディレクトリパスを記入
-            WriteLog(appPath);
             InitializeComponent();
             setIndex();
             changeYield.Enabled = false;
@@ -228,6 +227,7 @@ namespace YieldCurveGraph
             StreamWriter writer = new StreamWriter(appPath + "\\log.txt", false, Enc);
             writer.WriteLine("create log");
             writer.Close();
+            WriteLog(appPath);
         }
 
         // 再生ボタンを押下した時の処理（非同期宣言）

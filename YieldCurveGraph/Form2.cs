@@ -130,7 +130,10 @@ namespace YieldCurveGraph
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            Encoding Enc = Encoding.GetEncoding("utf-8");
+            StreamWriter writer = new StreamWriter(appPath + "\\log.txt", false, Enc);
+            writer.WriteLine("Form2 Load");
+            writer.Close();
         }
 
         private void changeYield_Click(object sender, EventArgs e)
