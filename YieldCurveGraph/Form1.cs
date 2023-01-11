@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 
 namespace YieldCurveGraph
 {
-    public partial class Form1 : Form
+    public partial class YieldCurveGraph : Form
     {
         string appPath = System.Windows.Forms.Application.StartupPath;
         // Form1クラスで利用する変数の定義
@@ -212,7 +212,7 @@ namespace YieldCurveGraph
             }
 
         }
-        public Form1()
+        public YieldCurveGraph()
         {   
             // logに実行ファイルのディレクトリパスを記入
             InitializeComponent();

@@ -2,7 +2,7 @@
 
 namespace YieldCurveGraph
 {
-    partial class Form1
+    partial class YieldCurveGraph
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -30,12 +30,12 @@ namespace YieldCurveGraph
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.YieldCurve = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.StockInd = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.play = new System.Windows.Forms.Button();
@@ -66,32 +66,32 @@ namespace YieldCurveGraph
             // 
             // YieldCurve
             // 
-            chartArea7.Name = "ChartArea1";
-            this.YieldCurve.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.YieldCurve.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.YieldCurve.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.YieldCurve.Legends.Add(legend1);
             this.YieldCurve.Location = new System.Drawing.Point(25, 350);
             this.YieldCurve.Name = "YieldCurve";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.YieldCurve.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.YieldCurve.Series.Add(series1);
             this.YieldCurve.Size = new System.Drawing.Size(750, 500);
             this.YieldCurve.TabIndex = 0;
             this.YieldCurve.Text = "chart1";
             // 
             // StockInd
             // 
-            chartArea8.Name = "ChartArea1";
-            this.StockInd.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.StockInd.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.StockInd.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.StockInd.Legends.Add(legend2);
             this.StockInd.Location = new System.Drawing.Point(800, 350);
             this.StockInd.Name = "StockInd";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.StockInd.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.StockInd.Series.Add(series2);
             this.StockInd.Size = new System.Drawing.Size(750, 500);
             this.StockInd.TabIndex = 1;
             this.StockInd.Text = "chart2";
@@ -319,7 +319,7 @@ namespace YieldCurveGraph
             this.EXIT.UseVisualStyleBackColor = true;
             this.EXIT.Click += new System.EventHandler(this.EXIT_Click);
             // 
-            // Form1
+            // YieldCurveGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,9 +349,9 @@ namespace YieldCurveGraph
             this.Controls.Add(this.play);
             this.Controls.Add(this.StockInd);
             this.Controls.Add(this.YieldCurve);
-            this.Name = "Form1";
+            this.Name = "YieldCurveGraph";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "YieldCurveGraph";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.YieldCurve)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockInd)).EndInit();

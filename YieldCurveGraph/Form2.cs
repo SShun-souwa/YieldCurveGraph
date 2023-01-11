@@ -213,8 +213,8 @@ namespace YieldCurveGraph
 
         private void DataSet_Click(object sender, EventArgs e)
         {
-            // System.Diagnostics.Process p = System.Diagnostics.Process.Start("notepad.exe");
-
+            Form3 f3 = new Form3();
+            f3.Show();
         }
 
         private void allsq_Click(object sender, EventArgs e)
@@ -239,9 +239,5 @@ namespace YieldCurveGraph
             setIndex(fileName);
         }
 
-        private void DataDownload_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
