@@ -14,6 +14,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
+using System.Diagnostics;
 
 namespace YieldCurveGraph
 {
@@ -138,8 +139,9 @@ namespace YieldCurveGraph
 
         private void changeYield_Click(object sender, EventArgs e)
         {
+            bool playjudge = false;
             this.Visible = false;
-            Form1 f1 = new Form1();
+            YieldCurveGraph f1 = new YieldCurveGraph();
             f1.Show();
             this.Close();
         }
@@ -213,8 +215,10 @@ namespace YieldCurveGraph
 
         private void DataSet_Click(object sender, EventArgs e)
         {
+            bool playjudge = false;
             Form3 f3 = new Form3();
             f3.Show();
+
         }
 
         private void allsq_Click(object sender, EventArgs e)
@@ -238,6 +242,5 @@ namespace YieldCurveGraph
             lists.Clear();
             setIndex(fileName);
         }
-
     }
 }
