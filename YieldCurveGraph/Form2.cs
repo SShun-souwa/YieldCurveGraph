@@ -139,8 +139,7 @@ namespace YieldCurveGraph
 
         private void changeYield_Click(object sender, EventArgs e)
         {
-            bool playjudge = false;
-            this.Visible = false;
+            playjudge = false;
             YieldCurveGraph f1 = new YieldCurveGraph();
             f1.Show();
             this.Close();
@@ -154,6 +153,7 @@ namespace YieldCurveGraph
         private async void Play_Click(object sender, EventArgs e)
         {
             Play.Enabled = false;
+            changeYield.Enabled = false;
             // 現在表示している株価指数名の表示
             //IndName.Text = stind;
             playjudge = true;
@@ -194,13 +194,13 @@ namespace YieldCurveGraph
                     break;
                 }
             }
-            Play.Enabled = true;
             count = 0;
         }
 
         private void Stop_Click(object sender, EventArgs e)
         {
             Play.Enabled = true;
+            changeYield.Enabled = true;
             // 再生の一時停止判定
             playjudge = false;
         }
@@ -208,6 +208,7 @@ namespace YieldCurveGraph
         private void Reset_Click(object sender, EventArgs e)
         {
             Play.Enabled = true;
+            changeYield.Enabled = true;
             // 再生の一時停止判定
             playjudge = false;
             count = 0;
@@ -215,7 +216,7 @@ namespace YieldCurveGraph
 
         private void DataSet_Click(object sender, EventArgs e)
         {
-            bool playjudge = false;
+           playjudge = false;
             Form3 f3 = new Form3();
             f3.Show();
 

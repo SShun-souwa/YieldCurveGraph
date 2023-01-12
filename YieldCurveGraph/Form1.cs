@@ -234,6 +234,7 @@ namespace YieldCurveGraph
         private async void play_Click(object sender, EventArgs e)
         {
             play.Enabled = false;
+            changeVi.Enabled = false;
             // WriteLog("play");
             // 現在表示している株価指数名の表示
             IndName.Text = stind;
@@ -283,6 +284,7 @@ namespace YieldCurveGraph
             play.Enabled = true;
             // 再生の一時停止判定
             playjudge = false;
+            changeVi.Enabled = true;
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -323,7 +325,7 @@ namespace YieldCurveGraph
                     dateerror.Text = "指定された日付のデータはありません。日時をずらしてください。";
                 }
             }
-
+            changeVi.Enabled = true;
         }
 
         // 表示する株価指数の切り替え
