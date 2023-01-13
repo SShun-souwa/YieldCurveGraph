@@ -162,7 +162,7 @@ namespace YieldCurveGraph
             // 
             this.DateTime.AutoSize = true;
             this.DateTime.Font = new System.Drawing.Font("MS UI Gothic", 40F);
-            this.DateTime.Location = new System.Drawing.Point(25, 150);
+            this.DateTime.Location = new System.Drawing.Point(25, 140);
             this.DateTime.Name = "DateTime";
             this.DateTime.Size = new System.Drawing.Size(240, 54);
             this.DateTime.TabIndex = 8;
