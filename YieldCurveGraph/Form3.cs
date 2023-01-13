@@ -23,11 +23,10 @@ namespace YieldCurveGraph
         private void button1_Click(object sender, EventArgs e)
         {
             string dataPath = appPath + "\\DataSet\\";
-            System.Diagnostics.Process p = System.Diagnostics.Process.Start("java",
-            "-jar I:\\HandMadePrograms\\YieldCurveGraph\\YieldCurveGraph\\YieldCurveGraph\\JAVA\\viset.jar " + dataPath);
-            p.StartInfo.CreateNoWindow = true;
-            p.WaitForExit();
+            string argment = "-jar " + appPath + "\\viset.jar " + dataPath;
+            System.Diagnostics.Process.Start("java", argment);
             this.Close();
         }
+
     }
 }

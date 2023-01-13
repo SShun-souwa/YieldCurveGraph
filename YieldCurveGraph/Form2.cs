@@ -20,6 +20,10 @@ namespace YieldCurveGraph
 {
     public partial class Form2 : Form
     {
+        double xaxisMin = 5000.0;
+        double xaxisMax = 31000.0;
+        double yaxisMin = 10.0;
+        double yaxisMax = 55.0;
         string appPath = System.Windows.Forms.Application.StartupPath;
         // 指数データを受け取るリストの定義
         List<string[]> lists = new List<string[]>();
@@ -106,14 +110,14 @@ namespace YieldCurveGraph
                 
             // x軸の設定
             Axis axisX = nivi.ChartAreas[0].AxisX;
-            axisX.Minimum = Math.Round(18000.0, 1, MidpointRounding.AwayFromZero);
-            axisX.Maximum = Math.Round(31000.0, 1, MidpointRounding.AwayFromZero);
+            axisX.Minimum = Math.Round(xaxisMin, 1, MidpointRounding.AwayFromZero);
+            axisX.Maximum = Math.Round(xaxisMax, 1, MidpointRounding.AwayFromZero);
             axisX.Interval = 1000.0;
 
             // y軸の設定
             Axis axisY = nivi.ChartAreas[0].AxisY;
-            axisY.Minimum = Math.Round(10.0, 1, MidpointRounding.AwayFromZero);
-            axisY.Maximum = Math.Round(55.0, 1, MidpointRounding.AwayFromZero);
+            axisY.Minimum = Math.Round(yaxisMin, 1, MidpointRounding.AwayFromZero);
+            axisY.Maximum = Math.Round(yaxisMax, 1, MidpointRounding.AwayFromZero);
             axisY.Interval = 5;
 
             // 生成・設定した系列をChartコントロールに追加
@@ -155,6 +159,10 @@ namespace YieldCurveGraph
             Play.Enabled = false;
             changeYield.Enabled = false;
             // 現在表示している株価指数名の表示
+            xaxisMin = double.Parse(xmin.Text);
+            xaxisMax = double.Parse(xmax.Text);
+            yaxisMin = double.Parse(ymin.Text);
+            yaxisMax = double.Parse(ymax.Text);
             //IndName.Text = stind;
             playjudge = true;
             // CSVを読み込んだリストをループ処理

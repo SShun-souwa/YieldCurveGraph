@@ -313,7 +313,6 @@ namespace YieldCurveGraph
                         dateerror.Text = "";    // 日付エラーテキストの非表示
                         count = i;              // countへ代入
                         test = false;
-                        resetMaxmin();
                         break;
                     }
                     i++;
@@ -325,6 +324,7 @@ namespace YieldCurveGraph
                     dateerror.Text = "指定された日付のデータはありません。日時をずらしてください。";
                 }
             }
+            resetMaxmin();
             changeVi.Enabled = true;
         }
 

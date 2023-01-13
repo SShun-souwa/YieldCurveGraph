@@ -46,6 +46,14 @@ namespace YieldCurveGraph
             this.label2 = new System.Windows.Forms.Label();
             this.allsq = new System.Windows.Forms.Button();
             this.msq = new System.Windows.Forms.Button();
+            this.xmax = new System.Windows.Forms.TextBox();
+            this.xmin = new System.Windows.Forms.TextBox();
+            this.ymax = new System.Windows.Forms.TextBox();
+            this.ymin = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nivi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,7 +162,7 @@ namespace YieldCurveGraph
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1399, 763);
+            this.textBox1.Location = new System.Drawing.Point(1395, 754);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(35, 19);
             this.textBox1.TabIndex = 31;
@@ -164,7 +172,7 @@ namespace YieldCurveGraph
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.label2.Location = new System.Drawing.Point(1357, 736);
+            this.label2.Location = new System.Drawing.Point(1364, 725);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 14);
             this.label2.TabIndex = 32;
@@ -172,7 +180,7 @@ namespace YieldCurveGraph
             // 
             // allsq
             // 
-            this.allsq.Location = new System.Drawing.Point(1471, 750);
+            this.allsq.Location = new System.Drawing.Point(1471, 725);
             this.allsq.Name = "allsq";
             this.allsq.Size = new System.Drawing.Size(75, 23);
             this.allsq.TabIndex = 33;
@@ -182,7 +190,7 @@ namespace YieldCurveGraph
             // 
             // msq
             // 
-            this.msq.Location = new System.Drawing.Point(1471, 800);
+            this.msq.Location = new System.Drawing.Point(1471, 754);
             this.msq.Name = "msq";
             this.msq.Size = new System.Drawing.Size(75, 23);
             this.msq.TabIndex = 34;
@@ -190,12 +198,88 @@ namespace YieldCurveGraph
             this.msq.UseVisualStyleBackColor = true;
             this.msq.Click += new System.EventHandler(this.msq_Click);
             // 
+            // xmax
+            // 
+            this.xmax.Location = new System.Drawing.Point(1384, 800);
+            this.xmax.Name = "xmax";
+            this.xmax.Size = new System.Drawing.Size(61, 19);
+            this.xmax.TabIndex = 35;
+            this.xmax.Text = "31000";
+            // 
+            // xmin
+            // 
+            this.xmin.Location = new System.Drawing.Point(1383, 840);
+            this.xmin.Name = "xmin";
+            this.xmin.Size = new System.Drawing.Size(61, 19);
+            this.xmin.TabIndex = 36;
+            this.xmin.Text = "5000";
+            // 
+            // ymax
+            // 
+            this.ymax.Location = new System.Drawing.Point(1500, 800);
+            this.ymax.Name = "ymax";
+            this.ymax.Size = new System.Drawing.Size(61, 19);
+            this.ymax.TabIndex = 37;
+            this.ymax.Text = "55";
+            // 
+            // ymin
+            // 
+            this.ymin.Location = new System.Drawing.Point(1500, 840);
+            this.ymin.Name = "ymin";
+            this.ymin.Size = new System.Drawing.Size(61, 19);
+            this.ymin.TabIndex = 38;
+            this.ymin.Text = "10";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1339, 803);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 12);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "x-Max";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1339, 843);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 12);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "x-Min";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1456, 803);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 12);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "y-Max";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1456, 843);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 12);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "y-Min";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.ControlBox = false;
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ymin);
+            this.Controls.Add(this.ymax);
+            this.Controls.Add(this.xmin);
+            this.Controls.Add(this.xmax);
             this.Controls.Add(this.msq);
             this.Controls.Add(this.allsq);
             this.Controls.Add(this.label2);
@@ -234,5 +318,13 @@ namespace YieldCurveGraph
         private Label label2;
         private Button allsq;
         private Button msq;
+        private TextBox xmax;
+        private TextBox xmin;
+        private TextBox ymax;
+        private TextBox ymin;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
     }
 }
