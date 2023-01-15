@@ -373,5 +373,12 @@ namespace YieldCurveGraph
         {
             Environment.Exit(0);
         }
+
+        private void ViHv_Click(object sender, EventArgs e)
+        {
+            Form4 f4 = new Form4();
+            f4.Show();
+            this.Hide();
+        }
     }
 }

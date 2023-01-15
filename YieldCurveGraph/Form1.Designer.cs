@@ -30,12 +30,12 @@ namespace YieldCurveGraph
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.YieldCurve = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.StockInd = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.play = new System.Windows.Forms.Button();
@@ -60,38 +60,39 @@ namespace YieldCurveGraph
             this.changeYield = new System.Windows.Forms.Button();
             this.changeVi = new System.Windows.Forms.Button();
             this.EXIT = new System.Windows.Forms.Button();
+            this.ViHv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.YieldCurve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockInd)).BeginInit();
             this.SuspendLayout();
             // 
             // YieldCurve
             // 
-            chartArea1.Name = "ChartArea1";
-            this.YieldCurve.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.YieldCurve.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.YieldCurve.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.YieldCurve.Legends.Add(legend3);
             this.YieldCurve.Location = new System.Drawing.Point(25, 350);
             this.YieldCurve.Name = "YieldCurve";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.YieldCurve.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.YieldCurve.Series.Add(series3);
             this.YieldCurve.Size = new System.Drawing.Size(750, 500);
             this.YieldCurve.TabIndex = 0;
             this.YieldCurve.Text = "chart1";
             // 
             // StockInd
             // 
-            chartArea2.Name = "ChartArea1";
-            this.StockInd.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.StockInd.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.StockInd.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.StockInd.Legends.Add(legend4);
             this.StockInd.Location = new System.Drawing.Point(800, 350);
             this.StockInd.Name = "StockInd";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.StockInd.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.StockInd.Series.Add(series4);
             this.StockInd.Size = new System.Drawing.Size(750, 500);
             this.StockInd.TabIndex = 1;
             this.StockInd.Text = "chart2";
@@ -132,7 +133,7 @@ namespace YieldCurveGraph
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(935, 10);
+            this.textBox1.Location = new System.Drawing.Point(955, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(35, 19);
             this.textBox1.TabIndex = 5;
@@ -142,7 +143,7 @@ namespace YieldCurveGraph
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.label1.Location = new System.Drawing.Point(820, 10);
+            this.label1.Location = new System.Drawing.Point(840, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 14);
             this.label1.TabIndex = 6;
@@ -210,7 +211,7 @@ namespace YieldCurveGraph
             // 
             // startday
             // 
-            this.startday.Location = new System.Drawing.Point(935, 40);
+            this.startday.Location = new System.Drawing.Point(955, 40);
             this.startday.Name = "startday";
             this.startday.Size = new System.Drawing.Size(100, 19);
             this.startday.TabIndex = 13;
@@ -220,7 +221,7 @@ namespace YieldCurveGraph
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.label4.Location = new System.Drawing.Point(800, 40);
+            this.label4.Location = new System.Drawing.Point(820, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 14);
             this.label4.TabIndex = 14;
@@ -288,20 +289,20 @@ namespace YieldCurveGraph
             // 
             // changeYield
             // 
-            this.changeYield.Font = new System.Drawing.Font("MS UI Gothic", 25F);
-            this.changeYield.Location = new System.Drawing.Point(75, 10);
+            this.changeYield.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.changeYield.Location = new System.Drawing.Point(25, 10);
             this.changeYield.Name = "changeYield";
-            this.changeYield.Size = new System.Drawing.Size(200, 75);
+            this.changeYield.Size = new System.Drawing.Size(175, 75);
             this.changeYield.TabIndex = 21;
             this.changeYield.Text = "changeYield";
             this.changeYield.UseVisualStyleBackColor = true;
             // 
             // changeVi
             // 
-            this.changeVi.Font = new System.Drawing.Font("MS UI Gothic", 25F);
-            this.changeVi.Location = new System.Drawing.Point(305, 10);
+            this.changeVi.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.changeVi.Location = new System.Drawing.Point(225, 10);
             this.changeVi.Name = "changeVi";
-            this.changeVi.Size = new System.Drawing.Size(200, 75);
+            this.changeVi.Size = new System.Drawing.Size(175, 75);
             this.changeVi.TabIndex = 22;
             this.changeVi.Text = "changeVi";
             this.changeVi.UseVisualStyleBackColor = true;
@@ -309,15 +310,26 @@ namespace YieldCurveGraph
             // 
             // EXIT
             // 
-            this.EXIT.Font = new System.Drawing.Font("MS UI Gothic", 50F);
+            this.EXIT.Font = new System.Drawing.Font("MS UI Gothic", 40F);
             this.EXIT.ForeColor = System.Drawing.Color.OrangeRed;
-            this.EXIT.Location = new System.Drawing.Point(535, 10);
+            this.EXIT.Location = new System.Drawing.Point(625, 10);
             this.EXIT.Name = "EXIT";
-            this.EXIT.Size = new System.Drawing.Size(200, 75);
+            this.EXIT.Size = new System.Drawing.Size(175, 75);
             this.EXIT.TabIndex = 23;
             this.EXIT.Text = "EXIT";
             this.EXIT.UseVisualStyleBackColor = true;
             this.EXIT.Click += new System.EventHandler(this.EXIT_Click);
+            // 
+            // ViHv
+            // 
+            this.ViHv.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.ViHv.Location = new System.Drawing.Point(425, 10);
+            this.ViHv.Name = "ViHv";
+            this.ViHv.Size = new System.Drawing.Size(175, 75);
+            this.ViHv.TabIndex = 24;
+            this.ViHv.Text = "VI-HV";
+            this.ViHv.UseVisualStyleBackColor = true;
+            this.ViHv.Click += new System.EventHandler(this.ViHv_Click);
             // 
             // YieldCurveGraph
             // 
@@ -325,6 +337,7 @@ namespace YieldCurveGraph
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.ControlBox = false;
+            this.Controls.Add(this.ViHv);
             this.Controls.Add(this.EXIT);
             this.Controls.Add(this.changeVi);
             this.Controls.Add(this.changeYield);
@@ -386,6 +399,7 @@ namespace YieldCurveGraph
         private System.Windows.Forms.Button changeYield;
         private System.Windows.Forms.Button changeVi;
         private System.Windows.Forms.Button EXIT;
+        private Button ViHv;
     }
 }
 

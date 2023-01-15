@@ -251,5 +251,13 @@ namespace YieldCurveGraph
             lists.Clear();
             setIndex(fileName);
         }
+
+        private void ViHv_Click(object sender, EventArgs e)
+        {
+            playjudge = false;
+            Form4 f4 = new Form4();
+            f4.Show();
+            this.Close();
+        }
     }
 }

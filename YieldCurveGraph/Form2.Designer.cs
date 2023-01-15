@@ -30,9 +30,9 @@ namespace YieldCurveGraph
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.changeYield = new System.Windows.Forms.Button();
             this.changeVi = new System.Windows.Forms.Button();
             this.EXIT = new System.Windows.Forms.Button();
@@ -54,15 +54,16 @@ namespace YieldCurveGraph
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.ViHv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nivi)).BeginInit();
             this.SuspendLayout();
             // 
             // changeYield
             // 
-            this.changeYield.Font = new System.Drawing.Font("MS UI Gothic", 25F);
-            this.changeYield.Location = new System.Drawing.Point(75, 10);
+            this.changeYield.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.changeYield.Location = new System.Drawing.Point(25, 10);
             this.changeYield.Name = "changeYield";
-            this.changeYield.Size = new System.Drawing.Size(200, 75);
+            this.changeYield.Size = new System.Drawing.Size(175, 75);
             this.changeYield.TabIndex = 22;
             this.changeYield.Text = "changeYield";
             this.changeYield.UseVisualStyleBackColor = true;
@@ -70,38 +71,39 @@ namespace YieldCurveGraph
             // 
             // changeVi
             // 
-            this.changeVi.Font = new System.Drawing.Font("MS UI Gothic", 25F);
-            this.changeVi.Location = new System.Drawing.Point(305, 10);
+            this.changeVi.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.changeVi.Location = new System.Drawing.Point(225, 10);
             this.changeVi.Name = "changeVi";
-            this.changeVi.Size = new System.Drawing.Size(200, 75);
+            this.changeVi.Size = new System.Drawing.Size(175, 75);
             this.changeVi.TabIndex = 23;
             this.changeVi.Text = "changeVi";
             this.changeVi.UseVisualStyleBackColor = true;
             // 
             // EXIT
             // 
-            this.EXIT.Font = new System.Drawing.Font("MS UI Gothic", 50F);
+            this.EXIT.BackColor = System.Drawing.SystemColors.Control;
+            this.EXIT.Font = new System.Drawing.Font("MS UI Gothic", 40F);
             this.EXIT.ForeColor = System.Drawing.Color.OrangeRed;
-            this.EXIT.Location = new System.Drawing.Point(535, 10);
+            this.EXIT.Location = new System.Drawing.Point(625, 10);
             this.EXIT.Name = "EXIT";
-            this.EXIT.Size = new System.Drawing.Size(200, 75);
+            this.EXIT.Size = new System.Drawing.Size(175, 75);
             this.EXIT.TabIndex = 24;
             this.EXIT.Text = "EXIT";
-            this.EXIT.UseVisualStyleBackColor = true;
+            this.EXIT.UseVisualStyleBackColor = false;
             this.EXIT.Click += new System.EventHandler(this.EXIT_Click);
             // 
             // nivi
             // 
-            chartArea2.Name = "ChartArea1";
-            this.nivi.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.nivi.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.nivi.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.nivi.Legends.Add(legend6);
             this.nivi.Location = new System.Drawing.Point(25, 120);
             this.nivi.Name = "nivi";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.nivi.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.nivi.Series.Add(series6);
             this.nivi.Size = new System.Drawing.Size(1296, 723);
             this.nivi.TabIndex = 25;
             this.nivi.Text = "chart1";
@@ -266,12 +268,24 @@ namespace YieldCurveGraph
             this.label6.TabIndex = 42;
             this.label6.Text = "y-Min";
             // 
+            // ViHv
+            // 
+            this.ViHv.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.ViHv.Location = new System.Drawing.Point(425, 10);
+            this.ViHv.Name = "ViHv";
+            this.ViHv.Size = new System.Drawing.Size(175, 75);
+            this.ViHv.TabIndex = 43;
+            this.ViHv.Text = "VI-HV";
+            this.ViHv.UseVisualStyleBackColor = true;
+            this.ViHv.Click += new System.EventHandler(this.ViHv_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.ControlBox = false;
+            this.Controls.Add(this.ViHv);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -326,5 +340,6 @@ namespace YieldCurveGraph
         private Label label4;
         private Label label5;
         private Label label6;
+        private Button ViHv;
     }
 }
