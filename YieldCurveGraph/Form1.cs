@@ -291,6 +291,7 @@ namespace YieldCurveGraph
             // 再生の一時停止判定
             playjudge = false;
             changeVi.Enabled = true;
+            ViHvChange.Enabled = true;
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -332,6 +333,7 @@ namespace YieldCurveGraph
             }
             resetMaxmin();
             changeVi.Enabled = true;
+            ViHvChange.Enabled = true;
         }
 
         // 表示する株価指数の切り替え

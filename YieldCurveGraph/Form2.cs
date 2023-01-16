@@ -250,6 +250,7 @@ namespace YieldCurveGraph
             changeYield.Enabled = true;
             // 再生の一時停止判定
             playjudge = false;
+            ViHvChange.Enabled = true;
         }
 
         private void Reset_Click(object sender, EventArgs e)
