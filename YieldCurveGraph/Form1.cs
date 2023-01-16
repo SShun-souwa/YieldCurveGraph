@@ -308,10 +308,10 @@ namespace YieldCurveGraph
                 // CSVデータの日付カラムから入力された日付と同日のインデックス番号を検索し、countに代入する処理
                 while (i < lists.Count) 
                 { 
-                    if (day == lists[i][0]) 
+                    if (lists[i][0].CompareTo(day) == 1) 
                     {
                         dateerror.Text = "";    // 日付エラーテキストの非表示
-                        count = i;              // countへ代入
+                        count = i - 1;              // countへ代入
                         test = false;
                         break;
                     }
