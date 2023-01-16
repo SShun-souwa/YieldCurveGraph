@@ -312,10 +312,16 @@ namespace YieldCurveGraph
             else{
                 int i = 0;
                 String day = daySet(startday.Text);
+                // 指定された日付がデータに存在しない場合にエラーの表示
+                if (day == "none" || test || day.CompareTo(lists[0][0]) == -1)
+                {
+                    count = 0;
+                    dateerror.Text = "指定された日付のデータはありません。日時を変更してください。";
+                }
                 // CSVデータの日付カラムから入力された日付周辺のデータのインデックス番号を検索し、countに代入する処理
-                while (i < lists.Count) 
-                { 
-                    if (lists[i][0].CompareTo(day) == 1) 
+                while (i < lists.Count)
+                {
+                    if (lists[i][0].CompareTo(day) == 1)
                     {
                         dateerror.Text = "";    // 日付エラーテキストの非表示
                         count = i - 1;              // countへ代入
@@ -323,12 +329,6 @@ namespace YieldCurveGraph
                         break;
                     }
                     i++;
-                }
-                // 指定された日付がデータに存在しない場合にエラーの表示
-                if (day　== "none"　|| test || day.CompareTo(lists[0][0]) == -1)
-                {
-                    count = 0;
-                    dateerror.Text = "指定された日付のデータはありません。日時を変更してください。";
                 }
             }
             resetMaxmin();

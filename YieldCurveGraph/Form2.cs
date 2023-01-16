@@ -135,7 +135,6 @@ namespace YieldCurveGraph
             series.MarkerBorderColor = Color.Black;              //マーカーの枠の色
             series.MarkerStyle = MarkerStyle.Square;
 
-            // 系列のポイント情報をセット、イールドカーブのデータは10種（CSVファイルの2～10列）
 
             // Seriesにデータを追加
             for (int j = 0; j <= count; j++)
@@ -257,6 +256,7 @@ namespace YieldCurveGraph
         {
             Play.Enabled = true;
             changeYield.Enabled = true;
+            ViHvChange.Enabled = true;
             // 再生の一時停止判定
             playjudge = false;
             // 表示期間指定を指定した時の処理
@@ -271,15 +271,15 @@ namespace YieldCurveGraph
                 // CSVデータの日付カラムから入力された日付周辺のデータのインデックス番号を検索し、countに代入する処理
                 while (i < lists.Count)
                 {
-                    if (day.CompareTo(lists[0][0]) == -1)
+                    if (DateTime.Parse(day).CompareTo(DateTime.Parse(lists[0][0])) == -1)
                     {
                         count = 0;
                         break;
                     }
 
-                    if (lists[i][0].CompareTo(day) == 1)
+                    if (DateTime.Parse(lists[i][0]).CompareTo(DateTime.Parse(day)) == 1)
                     {
-                        count = i - 1;              // countへ代入
+                        count = i - 1 ;              // countへ代入
                         break;
                     }
                     i++;
