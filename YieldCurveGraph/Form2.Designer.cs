@@ -30,9 +30,9 @@ namespace YieldCurveGraph
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.changeYield = new System.Windows.Forms.Button();
             this.changeVi = new System.Windows.Forms.Button();
             this.EXIT = new System.Windows.Forms.Button();
@@ -54,7 +54,9 @@ namespace YieldCurveGraph
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.ViHv = new System.Windows.Forms.Button();
+            this.ViHvChange = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.startday = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nivi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,16 +96,16 @@ namespace YieldCurveGraph
             // 
             // nivi
             // 
-            chartArea6.Name = "ChartArea1";
-            this.nivi.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.nivi.Legends.Add(legend6);
+            chartArea1.Name = "ChartArea1";
+            this.nivi.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.nivi.Legends.Add(legend1);
             this.nivi.Location = new System.Drawing.Point(25, 120);
             this.nivi.Name = "nivi";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.nivi.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.nivi.Series.Add(series1);
             this.nivi.Size = new System.Drawing.Size(1296, 723);
             this.nivi.TabIndex = 25;
             this.nivi.Text = "chart1";
@@ -122,7 +124,7 @@ namespace YieldCurveGraph
             // Stop
             // 
             this.Stop.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.Stop.Location = new System.Drawing.Point(1360, 300);
+            this.Stop.Location = new System.Drawing.Point(1360, 270);
             this.Stop.Name = "Stop";
             this.Stop.Size = new System.Drawing.Size(200, 100);
             this.Stop.TabIndex = 27;
@@ -133,7 +135,7 @@ namespace YieldCurveGraph
             // Reset
             // 
             this.Reset.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.Reset.Location = new System.Drawing.Point(1360, 450);
+            this.Reset.Location = new System.Drawing.Point(1360, 390);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(200, 100);
             this.Reset.TabIndex = 28;
@@ -144,7 +146,7 @@ namespace YieldCurveGraph
             // DataSet
             // 
             this.DataSet.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.DataSet.Location = new System.Drawing.Point(1360, 600);
+            this.DataSet.Location = new System.Drawing.Point(1360, 510);
             this.DataSet.Name = "DataSet";
             this.DataSet.Size = new System.Drawing.Size(200, 100);
             this.DataSet.TabIndex = 29;
@@ -268,16 +270,34 @@ namespace YieldCurveGraph
             this.label6.TabIndex = 42;
             this.label6.Text = "y-Min";
             // 
-            // ViHv
+            // ViHvChange
             // 
-            this.ViHv.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.ViHv.Location = new System.Drawing.Point(425, 10);
-            this.ViHv.Name = "ViHv";
-            this.ViHv.Size = new System.Drawing.Size(175, 75);
-            this.ViHv.TabIndex = 43;
-            this.ViHv.Text = "VI-HV";
-            this.ViHv.UseVisualStyleBackColor = true;
-            this.ViHv.Click += new System.EventHandler(this.ViHv_Click);
+            this.ViHvChange.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.ViHvChange.Location = new System.Drawing.Point(425, 10);
+            this.ViHvChange.Name = "ViHvChange";
+            this.ViHvChange.Size = new System.Drawing.Size(175, 75);
+            this.ViHvChange.TabIndex = 43;
+            this.ViHvChange.Text = "VI-HV";
+            this.ViHvChange.UseVisualStyleBackColor = true;
+            this.ViHvChange.Click += new System.EventHandler(this.ViHv_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 10F);
+            this.label7.Location = new System.Drawing.Point(1335, 680);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 14);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "途中の日時から表示";
+            // 
+            // startday
+            // 
+            this.startday.Location = new System.Drawing.Point(1470, 680);
+            this.startday.Name = "startday";
+            this.startday.Size = new System.Drawing.Size(100, 19);
+            this.startday.TabIndex = 45;
+            this.startday.Text = "yyyy-mm-dd";
             // 
             // Form2
             // 
@@ -285,7 +305,9 @@ namespace YieldCurveGraph
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.ControlBox = false;
-            this.Controls.Add(this.ViHv);
+            this.Controls.Add(this.startday);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.ViHvChange);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -340,6 +362,8 @@ namespace YieldCurveGraph
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button ViHv;
+        private Button ViHvChange;
+        private Label label7;
+        private TextBox startday;
     }
 }

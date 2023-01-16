@@ -233,8 +233,14 @@ namespace YieldCurveGraph
         // 再生ボタンを押下した時の処理（非同期宣言）
         private async void play_Click(object sender, EventArgs e)
         {
+            if (count >= lists.Count)
+            {
+                count = 0;
+            }
+
             play.Enabled = false;
             changeVi.Enabled = false;
+            ViHvChange.Enabled = false;
             // WriteLog("play");
             // 現在表示している株価指数名の表示
             IndName.Text = stind;
@@ -305,7 +311,7 @@ namespace YieldCurveGraph
             else{
                 int i = 0;
                 String day = daySet(startday.Text);
-                // CSVデータの日付カラムから入力された日付と同日のインデックス番号を検索し、countに代入する処理
+                // CSVデータの日付カラムから入力された日付周辺のデータのインデックス番号を検索し、countに代入する処理
                 while (i < lists.Count) 
                 { 
                     if (lists[i][0].CompareTo(day) == 1) 
@@ -318,10 +324,10 @@ namespace YieldCurveGraph
                     i++;
                 }
                 // 指定された日付がデータに存在しない場合にエラーの表示
-                if (day　== "none"　|| test)
+                if (day　== "none"　|| test || day.CompareTo(lists[0][0]) == -1)
                 {
                     count = 0;
-                    dateerror.Text = "指定された日付のデータはありません。日時をずらしてください。";
+                    dateerror.Text = "指定された日付のデータはありません。日時を変更してください。";
                 }
             }
             resetMaxmin();

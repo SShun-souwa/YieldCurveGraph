@@ -40,6 +40,41 @@ namespace YieldCurveGraph
             File.AppendAllText("log.txt", text + Environment.NewLine);
         }
 
+        // 入力された日付を正規表現(Regexクラス)を用いて同一の形式に整形するメソッド
+        // 例　2000/1/1 →　2000-01-01
+        public String daySet(String days)
+        {   // デフォルトの日付および日付を構成する年、月、日パーツを格納する配列の定義
+            String[] dayParts = { "2000", "01", "01" };
+            String day = "2000-01-01";
+            int i = 0;
+            // 正規表現で4桁数字+区切り文字+1~2桁数字+区切り文字+1~2桁数字に合致するか判定
+            if (Regex.IsMatch(days, @"\d{4}.\d{1,2}.\d{1,2}"))
+            {   // 合致する場合、数字の部分を抜き出して、日付のパーツ用配列に格納
+                MatchCollection matches = Regex.Matches(days, @"\d+");
+                foreach (Match match in matches)
+                {
+                    dayParts[i] = match.Value;
+                    i++;
+                }
+                // 月と日のパーツが一桁で、0が落ちている場合、0を追加して再格納
+                for (int j = 1; j < 3; j++)
+                {
+                    if (dayParts[j].Length == 1)
+                    {
+                        dayParts[j] = "0" + dayParts[j].ToString();
+                    }
+                }
+                // 日付のパーツを-で連結しyyyy-dd-mmの日付表記に変更し、戻り値として返す
+                day = dayParts[0] + "-" + dayParts[1] + "-" + dayParts[2];
+                return day;
+            }
+            else
+            {　 // 入力された日付の形式が判別できない場合、文字列noneを返す
+                return "none";
+            }
+
+        }
+
         // 株価指数のデータを作業用リストにセットするメソッド
         public void setIndex(string fileName)
         {
@@ -156,14 +191,18 @@ namespace YieldCurveGraph
 
         private async void Play_Click(object sender, EventArgs e)
         {
+            if(count >= lists.Count)
+            {
+                count = 0;
+            }
+
             Play.Enabled = false;
             changeYield.Enabled = false;
-            // 現在表示している株価指数名の表示
+            ViHvChange.Enabled = false;
             xaxisMin = double.Parse(xmin.Text);
             xaxisMax = double.Parse(xmax.Text);
             yaxisMin = double.Parse(ymin.Text);
             yaxisMax = double.Parse(ymax.Text);
-            //IndName.Text = stind;
             playjudge = true;
             // CSVを読み込んだリストをループ処理
             while (count < lists.Count)
@@ -202,7 +241,7 @@ namespace YieldCurveGraph
                     break;
                 }
             }
-            count = 0;
+            
         }
 
         private void Stop_Click(object sender, EventArgs e)
@@ -219,7 +258,32 @@ namespace YieldCurveGraph
             changeYield.Enabled = true;
             // 再生の一時停止判定
             playjudge = false;
-            count = 0;
+            // 表示期間指定を指定した時の処理
+            if (startday.Text == "0" || startday.Text == "yyyy-mm-dd" || startday.Text == "")
+            {
+                count = 0;
+            }
+            else
+            {
+                int i = 0;
+                String day = daySet(startday.Text);
+                // CSVデータの日付カラムから入力された日付周辺のデータのインデックス番号を検索し、countに代入する処理
+                while (i < lists.Count)
+                {
+                    if (day.CompareTo(lists[0][0]) == -1)
+                    {
+                        count = 0;
+                        break;
+                    }
+
+                    if (lists[i][0].CompareTo(day) == 1)
+                    {
+                        count = i - 1;              // countへ代入
+                        break;
+                    }
+                    i++;
+                }
+            }
         }
 
         private void DataSet_Click(object sender, EventArgs e)
