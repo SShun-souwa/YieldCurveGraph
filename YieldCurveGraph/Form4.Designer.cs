@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.ViHv = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.ViHvChange = new System.Windows.Forms.Button();
             this.EXIT = new System.Windows.Forms.Button();
             this.changeVi = new System.Windows.Forms.Button();
             this.changeYield = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.viHvChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.viHvChart)).BeginInit();
             this.SuspendLayout();
             // 
-            // ViHv
+            // ViHvChange
             // 
-            this.ViHv.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.ViHv.Location = new System.Drawing.Point(425, 10);
-            this.ViHv.Name = "ViHv";
-            this.ViHv.Size = new System.Drawing.Size(175, 75);
-            this.ViHv.TabIndex = 47;
-            this.ViHv.Text = "VI-HV";
-            this.ViHv.UseVisualStyleBackColor = true;
+            this.ViHvChange.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.ViHvChange.Location = new System.Drawing.Point(425, 10);
+            this.ViHvChange.Name = "ViHvChange";
+            this.ViHvChange.Size = new System.Drawing.Size(175, 75);
+            this.ViHvChange.TabIndex = 47;
+            this.ViHvChange.Text = "VI-HV";
+            this.ViHvChange.UseVisualStyleBackColor = true;
+            this.ViHvChange.Click += new System.EventHandler(this.ViHv_Click);
             // 
             // EXIT
             // 
@@ -84,21 +87,41 @@
             this.changeYield.UseVisualStyleBackColor = true;
             this.changeYield.Click += new System.EventHandler(this.changeYield_Click);
             // 
-            // chart1
+            // viHvChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(25, 100);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1500, 750);
-            this.chart1.TabIndex = 48;
-            this.chart1.Text = "chart1";
+            chartArea3.Name = "ChartArea1";
+            this.viHvChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.viHvChart.Legends.Add(legend3);
+            this.viHvChart.Location = new System.Drawing.Point(25, 100);
+            this.viHvChart.Name = "viHvChart";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.viHvChart.Series.Add(series3);
+            this.viHvChart.Size = new System.Drawing.Size(1400, 750);
+            this.viHvChart.TabIndex = 48;
+            this.viHvChart.Text = "chart1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1460, 600);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 100);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Vi-Hv";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1460, 725);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 100);
+            this.button2.TabIndex = 50;
+            this.button2.Text = "Delta";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form4
             // 
@@ -106,24 +129,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.ControlBox = false;
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.ViHv);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.viHvChart);
+            this.Controls.Add(this.ViHvChange);
             this.Controls.Add(this.EXIT);
             this.Controls.Add(this.changeVi);
             this.Controls.Add(this.changeYield);
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VI-HV";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viHvChart)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button ViHv;
+        private System.Windows.Forms.Button ViHvChange;
         private System.Windows.Forms.Button EXIT;
         private System.Windows.Forms.Button changeVi;
         private System.Windows.Forms.Button changeYield;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart viHvChart;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
