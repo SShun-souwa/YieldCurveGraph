@@ -166,7 +166,7 @@ namespace YieldCurveGraph
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1395, 754);
+            this.textBox1.Location = new System.Drawing.Point(1470, 680);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(35, 19);
             this.textBox1.TabIndex = 31;
@@ -176,7 +176,7 @@ namespace YieldCurveGraph
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.label2.Location = new System.Drawing.Point(1364, 725);
+            this.label2.Location = new System.Drawing.Point(1380, 680);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 14);
             this.label2.TabIndex = 32;
@@ -184,7 +184,7 @@ namespace YieldCurveGraph
             // 
             // allsq
             // 
-            this.allsq.Location = new System.Drawing.Point(1471, 725);
+            this.allsq.Location = new System.Drawing.Point(1380, 720);
             this.allsq.Name = "allsq";
             this.allsq.Size = new System.Drawing.Size(75, 23);
             this.allsq.TabIndex = 33;
@@ -194,7 +194,7 @@ namespace YieldCurveGraph
             // 
             // msq
             // 
-            this.msq.Location = new System.Drawing.Point(1471, 754);
+            this.msq.Location = new System.Drawing.Point(1470, 720);
             this.msq.Name = "msq";
             this.msq.Size = new System.Drawing.Size(75, 23);
             this.msq.TabIndex = 34;
@@ -204,7 +204,7 @@ namespace YieldCurveGraph
             // 
             // xmax
             // 
-            this.xmax.Location = new System.Drawing.Point(1384, 800);
+            this.xmax.Location = new System.Drawing.Point(1380, 770);
             this.xmax.Name = "xmax";
             this.xmax.Size = new System.Drawing.Size(61, 19);
             this.xmax.TabIndex = 35;
@@ -212,7 +212,7 @@ namespace YieldCurveGraph
             // 
             // xmin
             // 
-            this.xmin.Location = new System.Drawing.Point(1383, 840);
+            this.xmin.Location = new System.Drawing.Point(1380, 810);
             this.xmin.Name = "xmin";
             this.xmin.Size = new System.Drawing.Size(61, 19);
             this.xmin.TabIndex = 36;
@@ -220,7 +220,7 @@ namespace YieldCurveGraph
             // 
             // ymax
             // 
-            this.ymax.Location = new System.Drawing.Point(1500, 800);
+            this.ymax.Location = new System.Drawing.Point(1510, 770);
             this.ymax.Name = "ymax";
             this.ymax.Size = new System.Drawing.Size(61, 19);
             this.ymax.TabIndex = 37;
@@ -228,7 +228,7 @@ namespace YieldCurveGraph
             // 
             // ymin
             // 
-            this.ymin.Location = new System.Drawing.Point(1500, 840);
+            this.ymin.Location = new System.Drawing.Point(1510, 810);
             this.ymin.Name = "ymin";
             this.ymin.Size = new System.Drawing.Size(61, 19);
             this.ymin.TabIndex = 38;
@@ -237,7 +237,7 @@ namespace YieldCurveGraph
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1339, 803);
+            this.label3.Location = new System.Drawing.Point(1330, 770);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 12);
             this.label3.TabIndex = 39;
@@ -246,7 +246,7 @@ namespace YieldCurveGraph
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1339, 843);
+            this.label4.Location = new System.Drawing.Point(1330, 810);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 12);
             this.label4.TabIndex = 40;
@@ -255,7 +255,7 @@ namespace YieldCurveGraph
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1456, 803);
+            this.label5.Location = new System.Drawing.Point(1460, 770);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 12);
             this.label5.TabIndex = 41;
@@ -264,7 +264,7 @@ namespace YieldCurveGraph
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1456, 843);
+            this.label6.Location = new System.Drawing.Point(1460, 810);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 12);
             this.label6.TabIndex = 42;
@@ -285,7 +285,7 @@ namespace YieldCurveGraph
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.label7.Location = new System.Drawing.Point(1335, 680);
+            this.label7.Location = new System.Drawing.Point(1335, 650);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 14);
             this.label7.TabIndex = 44;
@@ -293,7 +293,7 @@ namespace YieldCurveGraph
             // 
             // startday
             // 
-            this.startday.Location = new System.Drawing.Point(1470, 680);
+            this.startday.Location = new System.Drawing.Point(1470, 650);
             this.startday.Name = "startday";
             this.startday.Size = new System.Drawing.Size(100, 19);
             this.startday.TabIndex = 45;
